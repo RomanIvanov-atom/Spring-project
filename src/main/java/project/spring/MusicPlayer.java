@@ -1,9 +1,17 @@
 package project.spring;
 
 public class MusicPlayer {
-    private final Music music;
+    private Music music;
+
+    public MusicPlayer() {
+
+    }
 
     public MusicPlayer(Music music) {
+        this.music = music;
+    }
+
+    public void setMusic(Music music) {
         this.music = music;
     }
 

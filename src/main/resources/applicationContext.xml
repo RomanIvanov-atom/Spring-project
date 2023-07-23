@@ -16,4 +16,13 @@
     <bean id="musicClassicalBean"
           class="project.spring.ClassicalMusic">
     </bean>
+    
+    <bean id="musicBean"
+          class="project.spring.ClassicalMusic">
+    </bean>
+    <bean id="musicPlayer"
+          class="project.spring.MusicPlayer">
+        <property name="music" ref="musicBean"/>
+    </bean>
+
 </beans>
