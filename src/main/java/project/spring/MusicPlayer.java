@@ -32,7 +32,7 @@ public class MusicPlayer {
     public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
     }
-//
+
 //    public void setMusic(Music music) {
 //        this.music = music;
 //    }
