@@ -35,7 +35,9 @@
     [при этом classpath - это папка resources]      -->
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicPlayer" class="project.spring.MusicPlayer">
+    <bean id="musicPlayer"
+          class="project.spring.MusicPlayer"
+          scope="prototype">
         <constructor-arg ref="musicList"/>
 
         <property name="name" value="${musicPlayer.name}"/>
