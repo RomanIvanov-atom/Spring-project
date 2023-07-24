@@ -21,7 +21,8 @@
           class="project.spring.ClassicalMusic">
     </bean>
 
-    <!-- для того, чтобы подгрузить данные в плеер с файла, а не самому прописывать -->
+    <!-- для того, чтобы подгрузить данные в плеер с файла, а не самому прописывать
+    [при этом classpath - это папка resources]      -->
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
 
