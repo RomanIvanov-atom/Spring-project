@@ -20,12 +20,17 @@
     <bean id="musicBean"
           class="project.spring.ClassicalMusic">
     </bean>
+
+    <!-- для того, чтобы подгрузить данные в плеер с файла, а не самому прописывать -->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+
     <bean id="musicPlayer"
           class="project.spring.MusicPlayer">
         <property name="music" ref="musicBean"/>
 
-        <property name="name" value="Some name"/>
-        <property name="volume" value="50"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
