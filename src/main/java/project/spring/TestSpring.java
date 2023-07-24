@@ -20,13 +20,22 @@ public class TestSpring {
 //        MusicPlayer classicalMusicPlayer = new MusicPlayer(classicalMusic);
 //        classicalMusicPlayer.playMusic();
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        boolean comparison = firstMusicPlayer == secondMusicPlayer;
 
-        musicPlayer.playMusic();
+        System.out.println(comparison);
+
+        System.out.println(firstMusicPlayer);
+        System.out.println(secondMusicPlayer);
+
+//        musicPlayer.playMusic();
+//
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
+//
+//        musicPlayer.playMusic();
 
         context.close();
     }
