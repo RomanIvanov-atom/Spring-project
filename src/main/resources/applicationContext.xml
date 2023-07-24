@@ -16,7 +16,7 @@
     <bean id="musicClassicalBean"
           class="project.spring.ClassicalMusic">
     </bean>
-    
+
     <bean id="musicBean"
           class="project.spring.ClassicalMusic">
     </bean>
@@ -36,7 +36,7 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicPlayer" class="project.spring.MusicPlayer">
-        <constructor-arg ref="musicList" />
+        <constructor-arg ref="musicList"/>
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
