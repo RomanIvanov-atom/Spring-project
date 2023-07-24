@@ -21,14 +21,22 @@
           class="project.spring.ClassicalMusic">
     </bean>
 
+    <bean id="musicList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="musicRockBean"/>
+                <ref bean="musicJazzBean"/>
+                <ref bean="musicClassicalBean"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
     <!-- для того, чтобы подгрузить данные в плеер с файла, а не самому прописывать
     [при этом classpath - это папка resources]      -->
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-
-    <bean id="musicPlayer"
-          class="project.spring.MusicPlayer">
-        <property name="music" ref="musicBean"/>
+    <bean id="musicPlayer" class="project.spring.MusicPlayer">
+        <constructor-arg ref="musicList" />
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
