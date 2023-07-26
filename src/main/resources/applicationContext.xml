@@ -18,7 +18,9 @@
     </bean>
 
     <bean id="musicBean"
-          class="project.spring.ClassicalMusic">
+          class="project.spring.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
 
     <bean id="musicList" class="java.util.ArrayList">
@@ -35,11 +37,11 @@
     [при этом classpath - это папка resources]      -->
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicPlayer" class="project.spring.MusicPlayer">
-        <constructor-arg ref="musicList"/>
+    <!--    <bean id="musicPlayer" class="project.spring.MusicPlayer">-->
+    <!--        <constructor-arg ref="musicList"/>-->
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+    <!--        <property name="name" value="${musicPlayer.name}"/>-->
+    <!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+    <!--    </bean>-->
 
 </beans>
