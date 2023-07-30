@@ -9,8 +9,13 @@ import java.util.List;
 @Component
 public class MusicPlayer {
 
-    @Autowired
-    private Music music;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+    }
 
 //    private List<Music> musicList = new ArrayList<>();
 //    private String name;
@@ -34,7 +39,8 @@ public class MusicPlayer {
 //    }
 
     public void playMusic() {
-        System.out.println("Now is playing " + music.getSong());
+        System.out.println("1st song is playing " + classicalMusic.getSong());
+        System.out.println("2nd song is playing " + rockMusic.getSong());
     }
 
 //    public void playMusic() {
