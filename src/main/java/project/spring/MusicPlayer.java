@@ -9,9 +9,6 @@ import java.util.List;
 @Component
 public class MusicPlayer {
 
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
-
     @Autowired
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
         this.classicalMusic = classicalMusic;
