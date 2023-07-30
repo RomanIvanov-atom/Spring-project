@@ -12,6 +12,7 @@ public class MusicPlayer {
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
 
+    @Autowired
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
@@ -38,9 +39,8 @@ public class MusicPlayer {
 //        this.musicList = musicList;
 //    }
 
-    public void playMusic() {
-        System.out.println("1st song is playing " + classicalMusic.getSong());
-        System.out.println("2nd song is playing " + rockMusic.getSong());
+    public String playMusic() {
+        return "1st song is playing " + classicalMusic.getSong();
     }
 
 //    public void playMusic() {
