@@ -16,7 +16,7 @@ public class ClassicalMusic implements Music {
     }
 
     @Override
-    public String getSongFromList() {
+    public String getRndSongFromList() {
         int rnd = ThreadLocalRandom.current().nextInt(0, classicalSongs.size());
         return classicalSongs.get(rnd);
     }

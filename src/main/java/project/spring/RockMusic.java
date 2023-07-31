@@ -16,7 +16,7 @@ public class RockMusic implements Music {
     }
 
     @Override
-    public String getSongFromList() {
+    public String getRndSongFromList() {
         int rnd = ThreadLocalRandom.current().nextInt(0, rockSongs.size());
         return rockSongs.get(rnd);
     }

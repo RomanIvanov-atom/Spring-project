@@ -16,7 +16,7 @@ public class JazzMusic implements Music {
     }
 
     @Override
-    public String getSongFromList() {
+    public String getRndSongFromList() {
         int rnd = ThreadLocalRandom.current().nextInt(0, jazzSongs.size());
         return jazzSongs.get(rnd);
     }

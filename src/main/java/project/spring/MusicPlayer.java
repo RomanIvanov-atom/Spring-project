@@ -1,28 +1,27 @@
 package project.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
 
-    private final Music music1;
-    private final Music music2;
-    private final Music music3;
+    private final ClassicalMusic classicalMusic;
+    private final RockMusic rockMusic;
+    private final JazzMusic jazzMusic;
 
     @Autowired
-    public MusicPlayer(@Qualifier("rockMusic") Music music1,
-                       @Qualifier("classicalMusic") Music music2,
-                       @Qualifier("jazzMusic") Music music3) {
-        this.music1 = music1;
-        this.music2 = music2;
-        this.music3 = music3;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, JazzMusic jazzMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+        this.jazzMusic = jazzMusic;
     }
 
-    public String playMusic() {
-        return "Playing 3 songs:\n" + music1.getSongFromList() + ",\n " +
-                music2.getSongFromList() + ",\n " +
-                music3.getSongFromList() + ".";
+    public void playMusic(MusicGenre genre) {
+        switch (genre) {
+            case CLASSIC -> System.out.println(classicalMusic.getRndSongFromList());
+            case ROCK -> System.out.println(rockMusic.getRndSongFromList());
+            case JAZZ -> System.out.println(jazzMusic.getRndSongFromList());
+        }
     }
 }
