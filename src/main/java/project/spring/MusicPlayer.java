@@ -20,37 +20,9 @@ public class MusicPlayer {
         this.music3 = music3;
     }
 
-//    private List<Music> musicList = new ArrayList<>();
-//    private String name;
-//    private int volume;
-
-//    public String getName() {
-//        return name;
-//    }
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//    public int getVolume() {
-//        return volume;
-//    }
-//    public void setVolume(int volume) {
-//        this.volume = volume;
-//    }
-
-//    public MusicPlayer(List<Music> musicList) {
-//        this.musicList = musicList;
-//    }
-
     public String playMusic() {
         return "Playing 3 songs:\n" + music1.getSongFromList() + ",\n " +
                 music2.getSongFromList() + ",\n " +
                 music3.getSongFromList() + ".";
     }
-
-//    public void playMusic() {
-//        for (Music music : musicList) {
-//            System.out.println("Now is playing " + music.getSong());
-//        }
-//    }
-//}
 }
