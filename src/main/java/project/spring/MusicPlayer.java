@@ -9,12 +9,15 @@ public class MusicPlayer {
 
     private final Music music1;
     private final Music music2;
+    private final Music music3;
 
     @Autowired
     public MusicPlayer(@Qualifier("rockMusic") Music music1,
-                       @Qualifier("classicalMusic") Music music2) {
+                       @Qualifier("classicalMusic") Music music2,
+                       @Qualifier("jazzMusic") Music music3) {
         this.music1 = music1;
         this.music2 = music2;
+        this.music3 = music3;
     }
 
 //    private List<Music> musicList = new ArrayList<>();
@@ -39,7 +42,9 @@ public class MusicPlayer {
 //    }
 
     public String playMusic() {
-        return "Playing 2 songs: " + music1.getSong() + ", " + music2.getSong() + ".";
+        return "Playing 3 songs:\n" + music1.getSongFromList() + ",\n " +
+                music2.getSongFromList() + ",\n " +
+                music3.getSongFromList() + ".";
     }
 
 //    public void playMusic() {
