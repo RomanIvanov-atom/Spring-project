@@ -7,9 +7,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class MusicPlayer {
 
+    private final Music music1;
+    private final Music music2;
+
     @Autowired
-    @Qualifier("classicalMusic")
-    private Music music;
+    public MusicPlayer(@Qualifier("rockMusic") Music music1,
+                       @Qualifier("classicalMusic") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
+    }
 
 //    private List<Music> musicList = new ArrayList<>();
 //    private String name;
@@ -33,7 +39,7 @@ public class MusicPlayer {
 //    }
 
     public String playMusic() {
-        return "Playing: " + music.getSong();
+        return "Playing 2 songs: " + music1.getSong() + ", " + music2.getSong() + ".";
     }
 
 //    public void playMusic() {
