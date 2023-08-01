@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
-@Scope("singleton")
+@Scope("prototype")
 public class ClassicalMusic implements Music {
     List<String> classicalSongs = Arrays.asList("Song1-Classic", "Song2-Classic", "Song3-Classic");
 

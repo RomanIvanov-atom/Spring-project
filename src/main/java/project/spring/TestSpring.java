@@ -34,11 +34,11 @@ public class TestSpring {
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());
 
-        // For demo of Singleton ( @Scope("Singleton") in ClassicMusic class )
+        // For demo of Prototype ( @Scope("Prototype") in ClassicMusic class )
         ClassicalMusic classicalMusic1 = context.getBean("classicalMusic", ClassicalMusic.class);
         ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
 
-        // It's TRUE because of Singleton
+        // It's FALSE because of Prototype scope
         System.out.println(classicalMusic1 == classicalMusic2);
 
         context.close();
