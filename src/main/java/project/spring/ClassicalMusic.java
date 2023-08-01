@@ -1,14 +1,11 @@
 package project.spring;
 
-import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Component
 public class ClassicalMusic implements Music {
     private final List<String> classicalSongs = Arrays.asList("Song1-Classic", "Song2-Classic", "Song3-Classic");
 

@@ -1,10 +1,7 @@
 package project.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MusicPlayer {
 
     @Value("${musicPlayer.name}")
@@ -24,13 +21,17 @@ public class MusicPlayer {
         return volume;
     }
 
-    @Autowired
     public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, JazzMusic jazzMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
         this.jazzMusic = jazzMusic;
     }
 
+    public String playMusic() {
+        return "Playing: " + classicalMusic.getSong() + ", " +
+                rockMusic.getSong() + ", " +
+                jazzMusic.getSong() + ".";
+    }
     public void playMusic(MusicGenre genre) {
         switch (genre) {
             case CLASSIC -> System.out.println(classicalMusic.getRndSongFromList());

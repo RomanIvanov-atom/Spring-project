@@ -1,12 +1,9 @@
 package project.spring;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Component
 public class JazzMusic implements Music {
     List<String> jazzSongs = Arrays.asList("Song1-Jazz", "Song2-Jazz", "Song3-Jazz");
 
