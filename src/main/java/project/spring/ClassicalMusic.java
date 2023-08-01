@@ -1,16 +1,26 @@
 package project.spring;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
-@Scope("prototype")
 public class ClassicalMusic implements Music {
-    List<String> classicalSongs = Arrays.asList("Song1-Classic", "Song2-Classic", "Song3-Classic");
+    private final List<String> classicalSongs = Arrays.asList("Song1-Classic", "Song2-Classic", "Song3-Classic");
+
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("Doing my initialization");
+    }
+
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("Doing my destruction");
+    }
 
     @Override
     public String getSong() {
