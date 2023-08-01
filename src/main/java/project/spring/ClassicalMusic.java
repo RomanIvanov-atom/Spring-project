@@ -1,5 +1,6 @@
 package project.spring;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
+@Scope("singleton")
 public class ClassicalMusic implements Music {
     List<String> classicalSongs = Arrays.asList("Song1-Classic", "Song2-Classic", "Song3-Classic");
 
