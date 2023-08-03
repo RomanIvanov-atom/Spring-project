@@ -2,16 +2,18 @@ package project.spring;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class MusicPlayer {
+
+    private final List<Music> musicList;
 
     @Value("${musicPlayer.name}")
     private String name;
 
     @Value("${musicPlayer.volume}")
     private int volume;
-    private final ClassicalMusic classicalMusic;
-    private final RockMusic rockMusic;
-    private final JazzMusic jazzMusic;
 
     public String getName() {
         return name;
@@ -21,22 +23,13 @@ public class MusicPlayer {
         return volume;
     }
 
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, JazzMusic jazzMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-        this.jazzMusic = jazzMusic;
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public String playMusic() {
-        return "Playing: " + classicalMusic.getSong() + ", " +
-                rockMusic.getSong() + ", " +
-                jazzMusic.getSong() + ".";
-    }
-    public void playMusic(MusicGenre genre) {
-        switch (genre) {
-            case CLASSIC -> System.out.println(classicalMusic.getRndSongFromList());
-            case ROCK -> System.out.println(rockMusic.getRndSongFromList());
-            case JAZZ -> System.out.println(jazzMusic.getRndSongFromList());
-        }
+        int rnd = ThreadLocalRandom.current().nextInt(musicList.size());
+        System.out.println("wtf");
+        return "Playing: " + musicList.get(rnd).getRndSongFromList() + " with volume " + this.volume;
     }
 }
