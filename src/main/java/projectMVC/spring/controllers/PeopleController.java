@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import projectMVC.spring.dao.PersonDAO;
+import projectMVC.spring.models.Person;
 
 @Controller
 @RequestMapping("/people")
@@ -32,5 +33,12 @@ public class PeopleController {
         model.addAttribute("person", personDAO.show(id));
         //model.addAttribute("person", personDAO.index().get(id));
         return "people/show";
+    }
+
+    @GetMapping("/new")
+    public String newPerson(Model model) {
+        model.addAttribute("person", new Person());
+
+        return "people/new";
     }
 }
