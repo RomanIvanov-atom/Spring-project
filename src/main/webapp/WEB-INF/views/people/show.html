@@ -6,10 +6,12 @@
   </head>
   <body>
 
-  <p th:text="${person.getName()}">VALUEname</p>
-  <p th:text="${person.getId()}">VALUEid</p>
+  <p th:text="${person.getName()} + ', ' + ${person.getAge()}">VALUEname, VALUEage</p>
+  <p th:text="'Email: ' + ${person.getEmail()}">VALUEemail</p>
+  <p th:text="'ID: ' + ${person.getId()}">VALUEid</p>
 
   <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+
   <br>
   <br>
 
