@@ -30,9 +30,8 @@ public class PeopleController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id,
                        Model model) {
-        // Получим 1 человека по его id из DAO и передадим его отображение в VIEW
+        // We are getting 1 person on his id from DAO and передадим его отображение в VIEW
         model.addAttribute("person", personDAO.show(id));
-        //model.addAttribute("person", personDAO.index().get(id));
         return "people/show";
     }
 

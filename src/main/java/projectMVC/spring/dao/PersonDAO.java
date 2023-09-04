@@ -17,17 +17,6 @@ public class PersonDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-//    private final List<Person> people;
-
-//    {
-//        people = new ArrayList<>();
-//
-//        people.add(new Person(++PEOPLE_COUNT, "Tom", 24, "tom@mail.ru"));
-//        people.add(new Person(++PEOPLE_COUNT, "Bob", 52, "bob@mail.ru"));
-//        people.add(new Person(++PEOPLE_COUNT, "Mike", 18, "mike@yahoo.com"));
-//        people.add(new Person(++PEOPLE_COUNT, "Katy", 34, "katy@gmail.com"));
-//    }
-
     public List<Person> index() {
         return jdbcTemplate.query("SELECT * FROM Person", new PersonMapper());
     }
